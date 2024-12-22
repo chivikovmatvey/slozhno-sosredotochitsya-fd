@@ -1,16 +1,50 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --title-text-color: #353430;
+  --text-color: #ffc2e6;
+  --accent-color: #ff8dcb;
+  --main-text-color: #353430;
+  --border-color: #ada4a6;
 }
-
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+:root.theme-light .page {
+  background-image: url(../images/cover-image-light.png);
+}
+:root.theme-light .section-main__title,
+:root.theme-light .header__theme-menu-button {
+  color: var(--title-text-color, #000028);
+}
+:root.theme-light .decorated-zone::after,
+:root.theme-light .decorated-zone::before,
+:root.theme-light .header__theme-menu-button_active,
+:root.theme-light .header__theme-menu-button:focus-visible {
+  border-color: var(--title-text-color, #000028);
+  outline-color: var(--title-text-color, #000028);
+}
+:root.theme-light .rec {
+  display: none;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --title-text-color: #353430;
+    --text-color: #ffc2e6;
+    --accent-color: #ff8dcb;
+    --main-text-color: #353430;
+    --border-color: #ada4a6;
+  }
+  .page {
+    background-image: url(../images/cover-image-light.png);
+  }
+  .section-main__title,
+  .header__theme-menu-button {
+    color: var(--title-text-color, #000028);
+  }
+  .decorated-zone::after,
+  .decorated-zone::before,
+  .header__theme-menu-button_active,
+  .header__theme-menu-button:focus-visible {
+    border-color: var(--title-text-color, #000028);
+    outline-color: var(--title-text-color, #000028);
+  }
+  .rec {
+    display: none;
+  }
 }
